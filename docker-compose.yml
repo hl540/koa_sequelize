@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  koa_sequelize:
+    container_name: koa_sequelize
+    image: koa_sequelize:v3
+    environment:
+      - DB_HOST=db
+    ports:
+      - "9991:9991"
+    expose:
+      - "9991"
+    networks:
+      - somenetwork
+networks:
+  somenetwork:
+    external: true
